@@ -1,13 +1,18 @@
 #include "stdafx.h"
 #include "wndpanel.h"
 
-CWndPanel::CWndPanel(HWND hWnd, CPanel * parent)
-	: CPanel(parent), m_hWnd(hWnd)
+CWndPanel::CWndPanel(HWND hWnd, UINT anchor, const SIZE& szMin, const SIZE& szMax)
+	: CPanel(EMPTY_RECT, anchor, szMin, szMax)
 {
 	ASSERT(IsWindow(m_hWnd));
 
 	RECT& rect = GetRect();
 	GetWindowRect(m_hWnd, &rect);
+
+	//DWORD style = GetWindowLong(m_hWnd, GWL_STYLE);
+	//DWORD style_ex = GetWindowLong(m_hWnd, GWL_EXSTYLE);
+	//
+	//AdjustWindowRectEx(&r, style, FALSE, style_ex);
 	
 	HWND hWndParent = ::GetParent(m_hWnd);
 	if(hWndParent != NULL)
@@ -16,7 +21,7 @@ CWndPanel::CWndPanel(HWND hWnd, CPanel * parent)
 		POINT br = { rect.right, rect.bottom };
 		ScreenToClient(hWndParent, &tl);
 		ScreenToClient(hWndParent, &br);
-		SetRect(tl.x, tl.y, br.x, br.y);
+		SetRect(&rect, tl.x, tl.y, br.x, br.y);
 	}
 }
 
@@ -24,25 +29,10 @@ CWndPanel::~CWndPanel()
 {
 }
 
-void CWndPanel::OnResize(int l_offset, int t_offset, int r_offset, int b_offset)
+void CWndPanel::OnResized()
 {
-	CPanel::OnResize(l_offset, t_offset, r_offset, b_offset);
-
-	//RECT& r = GetRect();
-
-	//DWORD style = GetWindowLong(m_hWnd, GWL_STYLE);
-	//DWORD style_ex = GetWindowLong(m_hWnd, GWL_EXSTYLE);
-	//
-	//AdjustWindowRectEx(&r, style, FALSE, style_ex);
 }
 
 void CWndPanel::OnMove(int x, int y)
 {
-	CPanel::OnMove(x, y);
-}
-
-void CWndPanel::OnPaint()
-{
-	//PAINTSTRUCT ps;
-	//HDC hdc = BeginPaint(m_hWnd, &ps);
 }

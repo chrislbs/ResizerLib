@@ -5,23 +5,25 @@
 
 class CWndPanel : public CPanel
 {
-private:
 	HWND m_hWnd;
 	
 public:
-	CWndPanel(HWND hWnd, CPanel * parent = NULL);
-	virtual ~CWndPanel();
+	CWndPanel(
+		HWND hWnd, 
+		UINT anchor = ANCHOR_TOP | ANCHOR_LEFT, 
+		const SIZE& szMin = EMPTY_SIZE,
+		const SIZE& szMax = EMPTY_SIZE);
 private:
 	CWndPanel();
 	CWndPanel(const CWndPanel& rhs);
 	CWndPanel& operator=(const CWndPanel& rhs);
+	virtual ~CWndPanel();
 
 public:
-	virtual void OnResize(int l_offset, int t_offset, int r_offset, int b_offset);
+	virtual void OnResized();
 	virtual void OnMove(int x, int y);
-	virtual void OnPaint();
 
-	inline HWND GetHWND() const { return m_hWnd; }
+	inline const HWND GetHWND() const { return m_hWnd; }
 };
 
 #endif

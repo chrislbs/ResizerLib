@@ -3,45 +3,58 @@
 
 #include <list>
 
+const int ANCHOR_LEFT	= 1;
+const int ANCHOR_TOP	= 2;
+const int ANCHOR_RIGHT	= 4;
+const int ANCHOR_BOTTOM	= 8;
+const int ANCHOR_VERT	= ANCHOR_TOP | ANCHOR_BOTTOM;
+const int ANCHOR_HORZ	= ANCHOR_LEFT | ANCHOR_RIGHT;
+const int ANCHOR_ALL	= ANCHOR_VERT | ANCHOR_HORZ;
+const int ANCHOR_HORZ_CENTERED	= 16;
+const int ANCHOR_VERT_CENTERED	= 32;
+const int ANCHOR_PRIORITY_RIGHT	= 64;
+const int ANCHOR_PRIORITY_BOTTOM= 128;
+const RECT EMPTY_RECT = {0};
+const SIZE EMPTY_SIZE = {0};
+
+
 class CPanel
 {
-private:
+	typedef RECT OFFSET;
+
 	RECT m_rect;
-	CPanel * m_pParent;
+	OFFSET m_offset;
+	SIZE m_szMin;
+	SIZE m_szMax;
+	UINT m_anchor;
 	std::list<CPanel *> m_children;
 
 public:
-	CPanel(CPanel * parent = NULL);
-	CPanel(const RECT& rect, CPanel * parent = NULL);
+	CPanel(
+		const RECT& rect = EMPTY_RECT, 
+		UINT anchor = ANCHOR_TOP | ANCHOR_LEFT, 
+		const SIZE& szMin = EMPTY_SIZE, 
+		const SIZE& szMax = EMPTY_SIZE);
 	virtual ~CPanel();
 private:
 	CPanel(const CPanel& rhs);
 	CPanel& operator=(const CPanel& rhs);
 
 public:
-	// Get operations
 	inline RECT& GetRect() { return m_rect; }
 	inline const RECT& GetRect() const { return m_rect; }
 
-	inline CPanel * GetParent() { return m_pParent; }
-	inline const CPanel * GetParent() const { return m_pParent; }
+	inline OFFSET& GetOffset() { return m_offset; }
+	inline const OFFSET& GetOffset() const { return m_offset; }
 
-	inline void SetParent(CPanel * panel) { m_pParent = panel; }
+	// implement iterators
+	inline const std::list<CPanel *>& GetChildren() const { return m_children; }
 
-	inline const std::list<CPanel *>& GetChildren() { return m_children; }
-	inline const std::list<const CPanel *> GetChildren() const { 
-		return std::list<const CPanel *>(m_children.begin(), m_children.end()); 
-	}
+	void AddChild(CPanel * panel);
 
-	inline void AddChild(CPanel * panel) { panel->SetParent(this); m_children.push_back(panel); }
-
-	// Set operations
-	void SetRect(const RECT& rect);
-	void SetRect(int left, int top, int right, int bottom);
-
-	virtual void OnResize(int l_offset, int t_offset, int r_offset, int b_offset);
-	virtual void OnMove(int x, int y);
-	virtual void OnPaint();
+	virtual void OnResized() = 0;
+	virtual void OnMove(int x, int y) = 0;
+	virtual void OnDestroy() = 0;
 };
 
 inline int GetRectWidth(const RECT& r) { return r.right - r.left; }

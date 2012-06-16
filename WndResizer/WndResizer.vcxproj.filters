@@ -62,10 +62,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="panel.cpp">
+    <ClCompile Include="wndpanel.cpp">
       <Filter>Source Files\resize</Filter>
     </ClCompile>
-    <ClCompile Include="wndpanel.cpp">
+    <ClCompile Include="panel.cpp">
       <Filter>Source Files\resize</Filter>
     </ClCompile>
   </ItemGroup>
