@@ -20,8 +20,10 @@ const SIZE EMPTY_SIZE = {0};
 
 class CPanel
 {
+public:
 	typedef RECT OFFSET;
 
+private:
 	RECT m_rect;
 	OFFSET m_offset;
 	SIZE m_szMin;
@@ -35,6 +37,7 @@ public:
 		UINT anchor = ANCHOR_TOP | ANCHOR_LEFT, 
 		const SIZE& szMin = EMPTY_SIZE, 
 		const SIZE& szMax = EMPTY_SIZE);
+protected:
 	virtual ~CPanel();
 private:
 	CPanel(const CPanel& rhs);
@@ -47,13 +50,15 @@ public:
 	inline OFFSET& GetOffset() { return m_offset; }
 	inline const OFFSET& GetOffset() const { return m_offset; }
 
+	inline UINT GetAnchor() const { return m_anchor; }
+	inline void SetAnchor(UINT anchor) { m_anchor = anchor; }
+
 	// implement iterators
 	inline const std::list<CPanel *>& GetChildren() const { return m_children; }
 
 	void AddChild(CPanel * panel);
 
 	virtual void OnResized() = 0;
-	virtual void OnMove(int x, int y) = 0;
 	virtual void OnDestroy() = 0;
 };
 
