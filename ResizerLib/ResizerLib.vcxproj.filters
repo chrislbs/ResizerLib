@@ -13,21 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\panels">
+      <UniqueIdentifier>{6bf3d1f5-6350-4809-9929-4967f16ad6cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\panels">
+      <UniqueIdentifier>{f8c22cc1-d054-4b09-ba06-8d2aa5383dba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="panel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resizablewnd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rootwndpanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wndpanel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -36,22 +33,31 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="panel.h">
+      <Filter>Header Files\panels</Filter>
+    </ClInclude>
+    <ClInclude Include="rootwndpanel.h">
+      <Filter>Header Files\panels</Filter>
+    </ClInclude>
+    <ClInclude Include="wndpanel.h">
+      <Filter>Header Files\panels</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="panel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="resizablewnd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rootwndpanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="wndpanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wndpanel.cpp">
+      <Filter>Source Files\panels</Filter>
+    </ClCompile>
+    <ClCompile Include="rootwndpanel.cpp">
+      <Filter>Source Files\panels</Filter>
+    </ClCompile>
+    <ClCompile Include="panel.cpp">
+      <Filter>Source Files\panels</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
