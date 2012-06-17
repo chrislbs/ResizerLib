@@ -24,6 +24,7 @@ void CPanel::AddChild(CPanel * panel)
 		m_rect.right - crect.right,
 		m_rect.bottom - crect.bottom
 	};
+	panel->SetOffset(off);
 
 	m_children.push_back(panel);
 }

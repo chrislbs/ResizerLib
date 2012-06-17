@@ -16,9 +16,8 @@ void ResizeWindow(IResizableWnd * rwnd, int rootWidth, int rootHeight)
 	if(!root)
 		return;
 
-	RECT rect = { 0 };
-	rect.right = rootWidth;
-	rect.bottom = rootHeight;
+	RECT rect = { 0, 0, rootWidth, rootHeight };
+	root->SetRect(rect);
 
 	typedef std::list<CPanel *>::const_iterator iter;
 
