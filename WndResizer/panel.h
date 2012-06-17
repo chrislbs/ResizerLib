@@ -54,6 +54,7 @@ public:
 	inline void SetAnchor(UINT anchor) { m_anchor = anchor; }
 
 	// implement iterators
+	inline std::list<CPanel*>& GetChildren() { return m_children; }
 	inline const std::list<CPanel *>& GetChildren() const { return m_children; }
 
 	void AddChild(CPanel * panel);
