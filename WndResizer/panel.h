@@ -53,6 +53,12 @@ public:
 	inline UINT GetAnchor() const { return m_anchor; }
 	inline void SetAnchor(UINT anchor) { m_anchor = anchor; }
 
+	inline SIZE& GetMinSize() { return m_szMin; }
+	inline const SIZE& GetMinSize() const { return m_szMin; }
+
+	inline SIZE& GetMaxSize() { return m_szMax; }
+	inline const SIZE& GetMaxSize() const { return m_szMax; }
+
 	// implement iterators
 	inline std::list<CPanel*>& GetChildren() { return m_children; }
 	inline const std::list<CPanel *>& GetChildren() const { return m_children; }
