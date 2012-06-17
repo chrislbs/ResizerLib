@@ -11,7 +11,7 @@ class CWndPanel : public CPanel
 public:
 	CWndPanel(
 		HWND hWnd, 
-		UINT anchor = ANCHOR_TOP | ANCHOR_LEFT, 
+		UINT anchor = 0, 
 		const SIZE& szMin = EMPTY_SIZE,
 		const SIZE& szMax = EMPTY_SIZE);
 private:

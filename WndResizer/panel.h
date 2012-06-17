@@ -34,7 +34,7 @@ private:
 public:
 	CPanel(
 		const RECT& rect = EMPTY_RECT, 
-		UINT anchor = ANCHOR_TOP | ANCHOR_LEFT, 
+		UINT anchor = 0, 
 		const SIZE& szMin = EMPTY_SIZE, 
 		const SIZE& szMax = EMPTY_SIZE);
 protected:
