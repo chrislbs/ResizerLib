@@ -8,8 +8,9 @@ CWndPanel::CWndPanel(HWND hWnd, UINT anchor)
 {
 	ASSERT(IsWindow(m_hWnd));
 
-	RECT& rect = GetRect();
+	RECT rect = { 0 };
 	GetWindowRect(m_hWnd, &rect);
+	SetRect(rect);
 	
 	HWND hWndParent = ::GetParent(m_hWnd);
 	if(hWndParent != NULL)
@@ -18,7 +19,9 @@ CWndPanel::CWndPanel(HWND hWnd, UINT anchor)
 		POINT br = { rect.right, rect.bottom };
 		ScreenToClient(hWndParent, &tl);
 		ScreenToClient(hWndParent, &br);
-		SetRect(&rect, tl.x, tl.y, br.x, br.y);
+
+		RECT r = { tl.x, tl.y, br.x, br.y };
+		SetRect(r);
 	}
 	m_wndPanels.insert(this);
 }

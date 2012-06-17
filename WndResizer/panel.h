@@ -36,10 +36,10 @@ private:
 	CPanel& operator=(const CPanel& rhs);
 
 public:
-	inline RECT& GetRect() { return m_rect; }
+	inline void SetRect(const RECT& rect) { memcpy_s(&m_rect, sizeof(RECT), &rect, sizeof(RECT)); }
 	inline const RECT& GetRect() const { return m_rect; }
 
-	inline OFFSET& GetOffset() { return m_offset; }
+	inline void SetOffset(const OFFSET& off) { memcpy_s(&m_offset, sizeof(OFFSET), &off, sizeof(OFFSET)); }
 	inline const OFFSET& GetOffset() const { return m_offset; }
 
 	inline UINT GetAnchor() const { return m_anchor; }

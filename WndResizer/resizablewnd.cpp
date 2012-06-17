@@ -16,7 +16,7 @@ void ResizeWindow(IResizableWnd * rwnd, int rootWidth, int rootHeight)
 	if(!root)
 		return;
 
-	RECT& rect = root->GetRect();
+	RECT rect = { 0 };
 	rect.right = rootWidth;
 	rect.bottom = rootHeight;
 
@@ -54,7 +54,7 @@ void ResizeWindow(IResizableWnd * rwnd, int rootWidth, int rootHeight)
 		HDWP hdwp = ::BeginDeferWindowPos(rzPanels.size());
 		std::for_each(rzPanels.begin(), rzPanels.end(), [&](CWndPanel * wp)
 		{
-			RECT& r = wp->GetRect();
+			const RECT& r = wp->GetRect();
 			::DeferWindowPos(hdwp, wp->GetHWND(), NULL, r.left, r.top, 
 				GetRectWidth(r), GetRectHeight(r), SWP_NOACTIVATE | SWP_NOZORDER);
 		});
@@ -63,7 +63,7 @@ void ResizeWindow(IResizableWnd * rwnd, int rootWidth, int rootHeight)
 		::InvalidateRect(root->GetHWND(), &root->GetRect(), FALSE);
 		std::for_each(rzPanels.begin(), rzPanels.end(), [&](CWndPanel * wp)
 		{
-			RECT& r = wp->GetRect();
+			const RECT& r = wp->GetRect();
 			::MoveWindow(wp->GetHWND(), r.left, r.top, GetRectWidth(r), GetRectHeight(r), TRUE);
 		});
 	}

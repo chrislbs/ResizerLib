@@ -16,13 +16,14 @@ CPanel::~CPanel()
 
 void CPanel::AddChild(CPanel * panel)
 {
-	OFFSET& off = panel->GetOffset();
-	RECT& crect = panel->GetRect();
-
-	off.bottom = m_rect.bottom - crect.bottom;
-	off.right = m_rect.right - crect.right;
-	off.left = crect.left - m_rect.left;
-	off.top = crect.top - m_rect.top;
+	const RECT& crect = panel->GetRect();
+	OFFSET off = 
+	{
+		crect.left - m_rect.left,
+		crect.top - m_rect.top,
+		m_rect.right - crect.right,
+		m_rect.bottom - crect.bottom
+	};
 
 	m_children.push_back(panel);
 }
@@ -30,13 +31,13 @@ void CPanel::AddChild(CPanel * panel)
 void CPanel::OnResized()
 {
 	typedef std::list<CPanel *>::const_iterator iter;
-	RECT& pr = GetRect();
+	const RECT& pr = GetRect();
 	for(iter it = GetChildren().begin(); it != GetChildren().end(); ++it)
 	{
 		CPanel * p = (*it);
-		OFFSET& off = p->GetOffset();
+		const OFFSET& off = p->GetOffset();
 		UINT anchor = p->GetAnchor();
-		RECT& cr = p->GetRect();
+		const RECT& cr = p->GetRect();
 
 		RECT r = { 0 };
 		if(anchor & ANCHOR_HORZ_CENTERED)
@@ -94,6 +95,6 @@ void CPanel::OnResized()
 			r.top = static_cast<int>(pr.top + (ratio * GetRectHeight(pr)));
 			r.bottom = r.top + GetRectHeight(cr);
 		}
-		memcpy_s(&cr, sizeof(RECT), &r, sizeof(RECT));
+		p->SetRect(r);
 	}
 }
