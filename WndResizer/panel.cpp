@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "panel.h"
 
-#include <queue>
-
 CPanel::CPanel(const RECT& rect, UINT anchor)
 	:m_anchor(anchor)
 {
