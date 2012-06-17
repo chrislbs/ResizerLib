@@ -59,7 +59,7 @@ public:
 
 	void AddChild(CPanel * panel);
 
-	virtual void OnResized() = 0;
+	virtual void OnResized();
 	virtual void OnDestroy() = 0;
 };
 

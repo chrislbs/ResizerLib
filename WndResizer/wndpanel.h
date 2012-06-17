@@ -24,7 +24,6 @@ private:
 public:
 	static inline const std::set<CPanel *>& GetWndPanels() { return m_wndPanels; }
 
-	virtual void OnResized();
 	virtual void OnDestroy();
 
 	inline HWND GetHWND() const { return m_hWnd; }
