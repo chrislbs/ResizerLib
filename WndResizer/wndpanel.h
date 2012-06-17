@@ -7,6 +7,7 @@
 class CWndPanel : public CPanel
 {
 	HWND m_hWnd;
+	static std::set<CPanel *> m_wndPanels;
 	
 public:
 	CWndPanel(
@@ -18,9 +19,8 @@ private:
 	CWndPanel();
 	CWndPanel(const CWndPanel& rhs);
 	CWndPanel& operator=(const CWndPanel& rhs);
+protected:
 	virtual ~CWndPanel();
-
-	static std::set<CPanel *> m_wndPanels;
 public:
 	static inline const std::set<CPanel *>& GetWndPanels() { return m_wndPanels; }
 
