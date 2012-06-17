@@ -2,6 +2,7 @@
 #define _wndpanel_h_
 
 #include "panel.h"
+#include <set>
 
 class CWndPanel : public CPanel
 {
@@ -19,11 +20,14 @@ private:
 	CWndPanel& operator=(const CWndPanel& rhs);
 	virtual ~CWndPanel();
 
+	static std::set<CPanel *> m_wndPanels;
 public:
-	virtual void OnResized();
-	virtual void OnMove(int x, int y);
+	static inline const std::set<CPanel *>& GetWndPanels() { return m_wndPanels; }
 
-	inline const HWND GetHWND() const { return m_hWnd; }
+	virtual void OnResized();
+	virtual void OnDestroy();
+
+	inline HWND GetHWND() const { return m_hWnd; }
 };
 
 #endif
