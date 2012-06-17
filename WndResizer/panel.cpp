@@ -3,12 +3,10 @@
 
 #include <queue>
 
-CPanel::CPanel(const RECT& rect, UINT anchor, const SIZE& szMin, const SIZE& szMax)
+CPanel::CPanel(const RECT& rect, UINT anchor)
 	:m_anchor(anchor)
 {
 	memcpy_s(&m_rect, sizeof(RECT), &rect, sizeof(RECT));
-	memcpy_s(&m_szMin, sizeof(SIZE), &szMin, sizeof(SIZE));
-	memcpy_s(&m_szMax, sizeof(SIZE), &szMax, sizeof(SIZE));
 	memset(&m_offset, 0, sizeof(OFFSET));
 }
 

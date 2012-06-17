@@ -3,8 +3,8 @@
 
 std::set<CPanel *> CWndPanel::m_wndPanels;
 
-CWndPanel::CWndPanel(HWND hWnd, UINT anchor, const SIZE& szMin, const SIZE& szMax)
-	: CPanel(EMPTY_RECT, anchor, szMin, szMax), m_hWnd(hWnd)
+CWndPanel::CWndPanel(HWND hWnd, UINT anchor)
+	: CPanel(EMPTY_RECT, anchor), m_hWnd(hWnd)
 {
 	ASSERT(IsWindow(m_hWnd));
 

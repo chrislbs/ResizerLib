@@ -26,17 +26,11 @@ public:
 private:
 	RECT m_rect;
 	OFFSET m_offset;
-	SIZE m_szMin;
-	SIZE m_szMax;
 	UINT m_anchor;
 	std::list<CPanel *> m_children;
 
 public:
-	CPanel(
-		const RECT& rect = EMPTY_RECT, 
-		UINT anchor = 0, 
-		const SIZE& szMin = EMPTY_SIZE, 
-		const SIZE& szMax = EMPTY_SIZE);
+	CPanel(const RECT& rect = EMPTY_RECT, UINT anchor = 0);
 protected:
 	virtual ~CPanel();
 private:
@@ -52,12 +46,6 @@ public:
 
 	inline UINT GetAnchor() const { return m_anchor; }
 	inline void SetAnchor(UINT anchor) { m_anchor = anchor; }
-
-	inline SIZE& GetMinSize() { return m_szMin; }
-	inline const SIZE& GetMinSize() const { return m_szMin; }
-
-	inline SIZE& GetMaxSize() { return m_szMax; }
-	inline const SIZE& GetMaxSize() const { return m_szMax; }
 
 	// implement iterators
 	inline std::list<CPanel*>& GetChildren() { return m_children; }

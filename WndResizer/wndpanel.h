@@ -10,11 +10,7 @@ class CWndPanel : public CPanel
 	static std::set<CPanel *> m_wndPanels;
 	
 public:
-	CWndPanel(
-		HWND hWnd, 
-		UINT anchor = 0, 
-		const SIZE& szMin = EMPTY_SIZE,
-		const SIZE& szMax = EMPTY_SIZE);
+	CWndPanel(HWND hWnd, UINT anchor = 0);
 private:
 	CWndPanel();
 	CWndPanel(const CWndPanel& rhs);
