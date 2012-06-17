@@ -19,6 +19,12 @@
     <Filter Include="Header Files\panels">
       <UniqueIdentifier>{f8c22cc1-d054-4b09-ba06-8d2aa5383dba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\mfc">
+      <UniqueIdentifier>{853a264a-7baa-4dd0-89d3-84f89c039802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mfc">
+      <UniqueIdentifier>{6a1e6ed0-f8c7-4ece-b5fa-9effae1b2d68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -42,6 +48,9 @@
     <ClInclude Include="wndpanel.h">
       <Filter>Header Files\panels</Filter>
     </ClInclude>
+    <ClInclude Include="ResizingWnd.h">
+      <Filter>Header Files\mfc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="resizablewnd.cpp">
@@ -58,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="panel.cpp">
       <Filter>Source Files\panels</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizingWnd.cpp">
+      <Filter>Source Files\mfc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
