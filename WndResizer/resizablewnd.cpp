@@ -173,6 +173,88 @@ void ResizeWndPanels(IResizableWnd * rwnd)
 	}
 }
 
+#pragma region ValidateWindowSizing Helper Functions
+void ValidateLeft(LPRECT pRect, const RECT& rcMin)
+{
+	int width = GetRectWidth(rcMin);
+	if(GetRectWidth(*pRect) < width)
+		pRect->left = pRect->right - width;
+}
+
+void ValidateRight(LPRECT pRect, const RECT& rcMin)
+{
+	int width = GetRectWidth(rcMin);
+	if(GetRectWidth(*pRect) < width)
+		pRect->right = pRect->left + width;
+}
+
+void ValidateTop(LPRECT pRect, const RECT& rcMin)
+{
+	int height = GetRectHeight(rcMin);
+	if(GetRectHeight(*pRect) < height)
+		pRect->top = pRect->bottom - height;
+}
+
+void ValidateBottom(LPRECT pRect, const RECT& rcMin)
+{
+	int height = GetRectHeight(rcMin);
+	if(GetRectHeight(*pRect) < height)
+		pRect->bottom = pRect->top + height;
+}
+
+#pragma endregion
+
+void ValidateWindowSizing(IResizableWnd * rwnd, UINT fwSide, LPRECT pRect)
+{
+	if(!rwnd)
+		return;
+
+	CRootWndPanel * root = rwnd->GetRootPanel();
+
+	if(!root)
+		return;
+
+	RECT rcMin = { 0, 0, root->GetMinSize().cx, root->GetMinSize().cy };
+
+	::AdjustWindowRectEx(
+		&rcMin,
+		GetWindowLongPtr(root->GetHWND(), GWL_STYLE),
+		FALSE, // i don't know where to check for this
+		GetWindowLongPtr(root->GetHWND(), GWL_EXSTYLE));
+
+	switch(fwSide)
+	{
+	case WMSZ_BOTTOM:
+		ValidateBottom(pRect, rcMin);
+		break;
+	case WMSZ_BOTTOMLEFT:
+		ValidateBottom(pRect, rcMin);
+		ValidateLeft(pRect, rcMin);
+		break;
+	case WMSZ_BOTTOMRIGHT:
+		ValidateBottom(pRect, rcMin);
+		ValidateRight(pRect, rcMin);
+		break;
+	case WMSZ_LEFT:
+		ValidateLeft(pRect, rcMin);
+		break;
+	case WMSZ_RIGHT:
+		ValidateRight(pRect, rcMin);
+		break;
+	case WMSZ_TOP:
+		ValidateTop(pRect, rcMin);
+		break;
+	case WMSZ_TOPLEFT:
+		ValidateLeft(pRect, rcMin);
+		ValidateTop(pRect, rcMin);
+		break;
+	case WMSZ_TOPRIGHT:
+		ValidateTop(pRect, rcMin);
+		ValidateRight(pRect, rcMin);
+		break;
+	}
+}
+
 void DestroyResizeWindow(IResizableWnd * rwnd)
 {
 	if(rwnd == NULL)

@@ -14,6 +14,8 @@ void ResizePanels(IResizableWnd * rwnd, int rootWidth, int rootHeight);
 void ResizeChildPanels(CPanel * parent, bool resizeVert, bool resizeHorz);
 void ResizeWndPanels(IResizableWnd * rwnd);
 
+void ValidateWindowSizing(IResizableWnd * rwnd, UINT fwSide, LPRECT pRect);
+
 void DestroyResizeWindow(IResizableWnd * rwnd);
 
 #endif
