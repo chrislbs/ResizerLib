@@ -3,7 +3,6 @@
 #include "rootwndpanel.h"
 
 #include <stack>
-#include <queue>
 #include <algorithm>
 
 void ResizePanels(IResizableWnd * rwnd, int rootWidth, int rootHeight)
