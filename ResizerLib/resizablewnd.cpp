@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "resizablewnd.h"
 #include "rootwndpanel.h"
 

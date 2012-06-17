@@ -71,6 +71,18 @@
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="panel.h" />
+    <ClInclude Include="resizablewnd.h" />
+    <ClInclude Include="rootwndpanel.h" />
+    <ClInclude Include="wndpanel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="panel.cpp" />
+    <ClCompile Include="resizablewnd.cpp" />
+    <ClCompile Include="rootwndpanel.cpp" />
+    <ClCompile Include="wndpanel.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\resize">
-      <UniqueIdentifier>{5865afe1-16e8-41df-9fe6-a4c607756710}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\resize">
-      <UniqueIdentifier>{98c0e07b-7696-455d-acd7-2c659a1f060c}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -45,18 +39,6 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="panel.h">
-      <Filter>Header Files\resize</Filter>
-    </ClInclude>
-    <ClInclude Include="wndpanel.h">
-      <Filter>Header Files\resize</Filter>
-    </ClInclude>
-    <ClInclude Include="resizablewnd.h">
-      <Filter>Header Files\resize</Filter>
-    </ClInclude>
-    <ClInclude Include="rootwndpanel.h">
-      <Filter>Header Files\resize</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WndResizer.cpp">
@@ -67,18 +49,6 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="wndpanel.cpp">
-      <Filter>Source Files\resize</Filter>
-    </ClCompile>
-    <ClCompile Include="panel.cpp">
-      <Filter>Source Files\resize</Filter>
-    </ClCompile>
-    <ClCompile Include="resizablewnd.cpp">
-      <Filter>Source Files\resize</Filter>
-    </ClCompile>
-    <ClCompile Include="rootwndpanel.cpp">
-      <Filter>Source Files\resize</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

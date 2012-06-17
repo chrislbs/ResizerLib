@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "wndpanel.h"
 
 std::set<CPanel *> CWndPanel::m_wndPanels;
@@ -6,7 +5,8 @@ std::set<CPanel *> CWndPanel::m_wndPanels;
 CWndPanel::CWndPanel(HWND hWnd, UINT anchor)
 	: CPanel(EMPTY_RECT, anchor), m_hWnd(hWnd)
 {
-	ASSERT(IsWindow(m_hWnd));
+	if(!IsWindow(m_hWnd))
+		throw std::exception("Invalid Window Handle"); // temporary
 
 	RECT rect = { 0 };
 	GetWindowRect(m_hWnd, &rect);

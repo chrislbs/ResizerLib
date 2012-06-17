@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "rootwndpanel.h"
 
 CRootWndPanel::CRootWndPanel(HWND hWnd, SIZE szMin)

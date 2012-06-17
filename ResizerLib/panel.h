@@ -2,6 +2,7 @@
 #define _panel_h_
 
 #include <list>
+#include <Windows.h>
 
 const int ANCHOR_LEFT	= 1;
 const int ANCHOR_TOP	= 2;

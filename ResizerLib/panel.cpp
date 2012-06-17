@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "panel.h"
 
 CPanel::CPanel(const RECT& rect, UINT anchor)
