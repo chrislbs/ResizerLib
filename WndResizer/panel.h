@@ -15,8 +15,6 @@ const int ANCHOR_VERT_CENTERED	= 32;
 const int ANCHOR_PRIORITY_RIGHT	= 64;
 const int ANCHOR_PRIORITY_BOTTOM= 128;
 const RECT EMPTY_RECT = {0};
-const SIZE EMPTY_SIZE = {0};
-
 
 class CPanel
 {

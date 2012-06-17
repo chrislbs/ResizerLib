@@ -54,6 +54,9 @@
     <ClInclude Include="resizablewnd.h">
       <Filter>Header Files\resize</Filter>
     </ClInclude>
+    <ClInclude Include="rootwndpanel.h">
+      <Filter>Header Files\resize</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WndResizer.cpp">
@@ -72,6 +75,9 @@
       <Filter>Source Files\resize</Filter>
     </ClCompile>
     <ClCompile Include="resizablewnd.cpp">
+      <Filter>Source Files\resize</Filter>
+    </ClCompile>
+    <ClCompile Include="rootwndpanel.cpp">
       <Filter>Source Files\resize</Filter>
     </ClCompile>
   </ItemGroup>
