@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "wndpanel.h"
 
 std::set<CPanel *> CWndPanel::m_wndPanels;

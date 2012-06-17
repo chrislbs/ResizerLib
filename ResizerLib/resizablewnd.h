@@ -1,8 +1,6 @@
 #ifndef _resizablewnd_h_
 #define _resizablewnd_h_
 
-#include <Windows.h>
-
 class CPanel;
 class CRootWndPanel;
 
