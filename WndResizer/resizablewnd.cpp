@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "resizablewnd.h"
-#include "wndpanel.h"
+#include "rootwndpanel.h"
 
 #include <stack>
 #include <queue>
@@ -11,7 +11,7 @@ void ResizeWindow(IResizableWnd * rwnd, int rootWidth, int rootHeight)
 	if(!rwnd)
 		return;
 
-	CWndPanel * root = rwnd->GetRootPanel();
+	CRootWndPanel * root = rwnd->GetRootPanel();
 
 	if(!root)
 		return;
@@ -74,7 +74,7 @@ void DestroyResizeWindow(IResizableWnd * rwnd)
 	if(rwnd == NULL)
 		return;
 
-	CWndPanel * root = rwnd->GetRootPanel();
+	CRootWndPanel * root = rwnd->GetRootPanel();
 
 	if(root == NULL)
 		return;
