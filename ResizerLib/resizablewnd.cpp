@@ -5,6 +5,8 @@
 #include <stack>
 #include <algorithm>
 
+namespace df {
+
 void ResizePanels(IResizableWnd * rwnd, int rootWidth, int rootHeight)
 {
 	if(!rwnd)
@@ -288,3 +290,5 @@ void DestroyResizeWindow(IResizableWnd * rwnd)
 		}
 	}
 }
+
+} // end namespace df

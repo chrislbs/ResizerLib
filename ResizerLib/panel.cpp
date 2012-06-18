@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "panel.h"
 
+namespace df {
+
 CPanel::CPanel(const RECT& rect, UINT anchor)
 	:m_anchor(anchor)
 {
@@ -31,3 +33,5 @@ void CPanel::OnDestroy()
 {
 	delete this;
 }
+
+} // end namespace df

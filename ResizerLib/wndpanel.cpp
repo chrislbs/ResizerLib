@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "wndpanel.h"
 
+namespace df {
+
 std::set<CPanel *> CWndPanel::m_wndPanels;
 
 CWndPanel::CWndPanel(HWND hWnd, UINT anchor)
@@ -36,3 +38,5 @@ void CWndPanel::OnDestroy()
 	m_wndPanels.erase(this);
 	CPanel::OnDestroy();
 }
+
+} // end namespace df

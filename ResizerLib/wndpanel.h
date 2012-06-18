@@ -4,6 +4,8 @@
 #include "panel.h"
 #include <set>
 
+namespace df {
+
 class CWndPanel : public CPanel
 {
 	HWND m_hWnd;
@@ -24,5 +26,7 @@ public:
 
 	inline HWND GetHWND() const { return m_hWnd; }
 };
+
+} // end namespace df
 
 #endif

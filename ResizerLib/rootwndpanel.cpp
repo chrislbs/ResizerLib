@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "rootwndpanel.h"
 
+namespace df {
+
 CRootWndPanel::CRootWndPanel(HWND hWnd, SIZE szMin)
 	:CWndPanel(hWnd)
 {
@@ -10,3 +12,5 @@ CRootWndPanel::CRootWndPanel(HWND hWnd, SIZE szMin)
 CRootWndPanel::~CRootWndPanel()
 {
 }
+
+} // end namespace df

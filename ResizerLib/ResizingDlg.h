@@ -5,6 +5,8 @@
 
 #include "resizablewnd.h"
 
+namespace df {
+
 class CResizingDlg : public CDialog, public IResizableWnd
 {
 	CRootWndPanel * m_rootPanel;
@@ -22,6 +24,8 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 };
+
+} // end namespace df
 
 #endif // is def _AFXDLL
 

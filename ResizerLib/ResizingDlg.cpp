@@ -4,6 +4,8 @@
 
 #ifdef _AFXDLL
 
+namespace df {
+
 CResizingDlg::CResizingDlg(UINT IDD, CWnd * pParent)
 	:CDialog(IDD, pParent), m_rootPanel(NULL)
 {
@@ -41,5 +43,7 @@ void CResizingDlg::OnDestroy()
 	CDialog::OnDestroy();
 	m_rootPanel->OnDestroy();
 }
+
+} // end namespace df
 
 #endif

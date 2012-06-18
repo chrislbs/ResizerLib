@@ -3,6 +3,8 @@
 
 #include "wndpanel.h"
 
+namespace df {
+
 const SIZE EMPTY_SIZE = {0};
 
 class CRootWndPanel : public CWndPanel
@@ -22,4 +24,6 @@ public:
 	// consider an assert or exception if the new minimum size is greater than current window size
 	inline void SetMinSize(const SIZE& szMin) { memcpy_s(&m_szMin, sizeof(SIZE), &szMin, sizeof(SIZE)); }
 };
+
+} // end namespace df
 #endif

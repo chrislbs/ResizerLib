@@ -5,6 +5,8 @@
 
 #include "resizablewnd.h"
 
+namespace df {
+
 class CResizingWnd : public CWnd, public IResizableWnd
 {
 	DECLARE_DYNAMIC(CResizingWnd)
@@ -32,6 +34,8 @@ private:
 protected:
 	DECLARE_MESSAGE_MAP()
 };
+
+} // end namespace df
 
 #endif // is def _AFXDLL
 

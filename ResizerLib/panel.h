@@ -4,6 +4,8 @@
 #include <list>
 #include <Windows.h>
 
+namespace df {
+
 const int ANCHOR_LEFT	= 1;
 const int ANCHOR_TOP	= 2;
 const int ANCHOR_RIGHT	= 4;
@@ -53,5 +55,7 @@ public:
 
 inline int GetRectWidth(const RECT& r) { return r.right - r.left; }
 inline int GetRectHeight(const RECT& r) { return r.bottom - r.top; }
+
+} // end namespace df
 
 #endif

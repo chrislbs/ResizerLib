@@ -3,6 +3,8 @@
 #include "wndpanel.h"
 #include <iterator>
 
+namespace df {
+
 template<typename InputIterator, typename OutputIterator>
 void CreateWndPanels(InputIterator begin, InputIterator end, OutputIterator out, UINT anchor = 0)
 {
@@ -49,5 +51,7 @@ _SetPanelsParent(
 		++begin;
 	}
 }
+
+} // end namespace df
 
 #endif // is def _AFXDLL

@@ -1,6 +1,8 @@
 #ifndef _resizablewnd_h_
 #define _resizablewnd_h_
 
+namespace df {
+
 class CPanel;
 class CRootWndPanel;
 
@@ -17,5 +19,7 @@ void ResizeWndPanels(IResizableWnd * rwnd);
 void ValidateWindowSizing(IResizableWnd * rwnd, UINT fwSide, LPRECT pRect);
 
 void DestroyResizeWindow(IResizableWnd * rwnd);
+
+} // end namespace df
 
 #endif

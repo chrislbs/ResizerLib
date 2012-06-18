@@ -4,6 +4,8 @@
 
 #ifdef _AFXDLL
 
+namespace df {
+
 IMPLEMENT_DYNAMIC(CResizingWnd, CWnd)
 
 const TCHAR CResizingWnd::CLASS_NAME[] = "RESIZING_WINDOW_CLASS";
@@ -73,5 +75,7 @@ void CResizingWnd::OnSizing(UINT fwSide, LPRECT pRect)
 	CWnd::OnSizing(fwSide, pRect);
 	ValidateWindowSizing(this, fwSide, pRect);
 }
+
+} // end namespace df
 
 #endif // is def _AFXDLL
