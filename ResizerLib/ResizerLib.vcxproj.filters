@@ -54,6 +54,9 @@
     <ClInclude Include="ResizingDlg.h">
       <Filter>Header Files\mfc</Filter>
     </ClInclude>
+    <ClInclude Include="panelfuncs.h">
+      <Filter>Header Files\mfc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="resizablewnd.cpp">

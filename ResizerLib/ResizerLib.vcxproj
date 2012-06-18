@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="panel.h" />
+    <ClInclude Include="panelfuncs.h" />
     <ClInclude Include="resizablewnd.h" />
     <ClInclude Include="ResizingDlg.h" />
     <ClInclude Include="ResizingWnd.h" />
