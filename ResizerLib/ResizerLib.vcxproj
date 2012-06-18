@@ -127,6 +127,7 @@
   <ItemGroup>
     <ClInclude Include="panel.h" />
     <ClInclude Include="resizablewnd.h" />
+    <ClInclude Include="ResizingDlg.h" />
     <ClInclude Include="ResizingWnd.h" />
     <ClInclude Include="rootwndpanel.h" />
     <ClInclude Include="stdafx.h" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="panel.cpp" />
     <ClCompile Include="resizablewnd.cpp" />
+    <ClCompile Include="ResizingDlg.cpp" />
     <ClCompile Include="ResizingWnd.cpp" />
     <ClCompile Include="rootwndpanel.cpp" />
     <ClCompile Include="stdafx.cpp">
