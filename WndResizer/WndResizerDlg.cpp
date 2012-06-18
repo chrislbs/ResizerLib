@@ -26,6 +26,10 @@ CWndResizerDlg::CWndResizerDlg(CWnd* pParent /*=NULL*/)
 void CWndResizerDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_BUTTON1, m_btns[0]);
+	DDX_Control(pDX, IDC_BUTTON2, m_btns[1]);
+	DDX_Control(pDX, IDC_BUTTON3, m_btns[2]);
+	DDX_Control(pDX, IDC_BUTTON4, m_btns[3]);
 }
 
 BEGIN_MESSAGE_MAP(CWndResizerDlg, CDialogEx)
@@ -44,8 +48,6 @@ BOOL CWndResizerDlg::OnInitDialog()
 	//  when the application's main window is not a dialog
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
-
-	// TODO: Add extra initialization here
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
