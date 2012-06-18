@@ -4,20 +4,16 @@
 
 #ifdef _AFXDLL
 
-IMPLEMENT_DYNAMIC(CResizingDlg, CDialog)
-
 CResizingDlg::CResizingDlg(UINT IDD, CWnd * pParent)
 	:CDialog(IDD, pParent), m_rootPanel(NULL)
 {
 }
 
-BOOL CResizingDlg::OnInitDialog()
+void CResizingDlg::PreSubclassWindow()
 {
-	BOOL ret = CDialog::OnInitDialog();
+	CDialog::PreSubclassWindow();	
 
 	m_rootPanel = new CRootWndPanel(GetSafeHwnd());
-
-	return ret;
 }
 
 BEGIN_MESSAGE_MAP(CResizingDlg, CDialog)

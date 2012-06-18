@@ -7,8 +7,6 @@
 
 class CResizingDlg : public CDialog, public IResizableWnd
 {
-	DECLARE_DYNAMIC(CResizingDlg)
-
 	CRootWndPanel * m_rootPanel;
 
 public:
@@ -17,7 +15,7 @@ public:
 	inline virtual CRootWndPanel * GetRootPanel() { return m_rootPanel; }
 
 protected:
-	virtual BOOL OnInitDialog();
+	virtual void PreSubclassWindow();
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnSizing(UINT fwSide, LPRECT pRect);
 	afx_msg void OnDestroy();
