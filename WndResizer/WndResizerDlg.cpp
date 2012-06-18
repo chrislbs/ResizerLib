@@ -7,6 +7,9 @@
 #include "WndResizerDlg.h"
 #include "afxdialogex.h"
 
+#include <panelfuncs.h>
+#include <rootwndpanel.h>
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -18,21 +21,21 @@
 
 
 CWndResizerDlg::CWndResizerDlg(CWnd* pParent /*=NULL*/)
-	: CDialogEx(CWndResizerDlg::IDD, pParent)
+	: CResizingDlg(CWndResizerDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
 void CWndResizerDlg::DoDataExchange(CDataExchange* pDX)
 {
-	CDialogEx::DoDataExchange(pDX);
+	CResizingDlg::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_BUTTON1, m_btns[0]);
 	DDX_Control(pDX, IDC_BUTTON2, m_btns[1]);
 	DDX_Control(pDX, IDC_BUTTON3, m_btns[2]);
 	DDX_Control(pDX, IDC_BUTTON4, m_btns[3]);
 }
 
-BEGIN_MESSAGE_MAP(CWndResizerDlg, CDialogEx)
+BEGIN_MESSAGE_MAP(CWndResizerDlg, CResizingDlg)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 END_MESSAGE_MAP()
@@ -42,12 +45,17 @@ END_MESSAGE_MAP()
 
 BOOL CWndResizerDlg::OnInitDialog()
 {
-	CDialogEx::OnInitDialog();
+	CResizingDlg::OnInitDialog();
 
 	// Set the icon for this dialog.  The framework does this automatically
 	//  when the application's main window is not a dialog
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
+
+	std::list<df::CWndPanel *> btnPanels;
+	df::CreateWndPanels(m_btns, m_btns + _countof(m_btns), std::back_inserter(btnPanels));
+	df::SetPanelsParent(GetRootPanel(), btnPanels.begin(), btnPanels.end());
+
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -77,7 +85,7 @@ void CWndResizerDlg::OnPaint()
 	}
 	else
 	{
-		CDialogEx::OnPaint();
+		CResizingDlg::OnPaint();
 	}
 }
 

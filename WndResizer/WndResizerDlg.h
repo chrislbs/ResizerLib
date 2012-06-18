@@ -5,9 +5,11 @@
 #pragma once
 #include "afxwin.h"
 
+#include <ResizingDlg.h>
+
 
 // CWndResizerDlg dialog
-class CWndResizerDlg : public CDialogEx
+class CWndResizerDlg : public df::CResizingDlg
 {
 // Construction
 public:
