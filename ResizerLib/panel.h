@@ -48,7 +48,7 @@ public:
 
 	void AddChild(CPanel * panel);
 
-	virtual void OnDestroy() = 0;
+	virtual void OnDestroy();
 };
 
 inline int GetRectWidth(const RECT& r) { return r.right - r.left; }

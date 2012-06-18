@@ -34,5 +34,5 @@ CWndPanel::~CWndPanel()
 void CWndPanel::OnDestroy()
 {
 	m_wndPanels.erase(this);
-	delete this;
+	CPanel::OnDestroy();
 }

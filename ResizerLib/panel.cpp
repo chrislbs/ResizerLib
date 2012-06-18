@@ -26,3 +26,8 @@ void CPanel::AddChild(CPanel * panel)
 
 	m_children.push_back(panel);
 }
+
+void CPanel::OnDestroy()
+{
+	delete this;
+}
