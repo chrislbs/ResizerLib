@@ -50,17 +50,17 @@ void CResizingWnd::PreSubclassWindow()
 	m_rootPanel = new CRootWndPanel(GetSafeHwnd());
 }
 
+BOOL CResizingWnd::DestroyWindow()
+{
+	m_rootPanel->OnDestroy();
+	BOOL ret = CWnd::DestroyWindow();
+	return ret;
+}
+
 BEGIN_MESSAGE_MAP(CResizingWnd, CWnd)
 	ON_WM_SIZE()
 	ON_WM_SIZING()
-	ON_WM_DESTROY()
 END_MESSAGE_MAP()
-
-void CResizingWnd::OnDestroy()
-{
-	CWnd::OnDestroy();
-	m_rootPanel->OnDestroy();
-}
 
 void CResizingWnd::OnSize(UINT nType, int cx, int cy)
 {

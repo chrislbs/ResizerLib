@@ -16,11 +16,11 @@ public:
 
 	inline virtual CRootWndPanel * GetRootPanel() { return m_rootPanel; }
 
-protected:
+public:
 	virtual void PreSubclassWindow();
+	virtual BOOL DestroyWindow();
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnSizing(UINT fwSide, LPRECT pRect);
-	afx_msg void OnDestroy();
 
 	DECLARE_MESSAGE_MAP()
 };

@@ -15,6 +15,7 @@ class CResizingWnd : public CWnd, public IResizableWnd
 
 public:
 	static const TCHAR CLASS_NAME[];
+	static BOOL RegisterWindowClass();
 
 	CResizingWnd();
 
@@ -22,14 +23,13 @@ public:
 
 	// CWnd Overrides
 	virtual void PreSubclassWindow();
+	virtual BOOL DestroyWindow();
 
 	// MFC Messages
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnSizing(UINT fwSide, LPRECT pRect);
-	afx_msg void OnDestroy();
 
 private:
-	BOOL RegisterWindowClass();
 
 protected:
 	DECLARE_MESSAGE_MAP()

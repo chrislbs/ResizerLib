@@ -19,7 +19,6 @@ void CResizingDlg::PreSubclassWindow()
 }
 
 BEGIN_MESSAGE_MAP(CResizingDlg, CDialog)
-	ON_WM_DESTROY()
 	ON_WM_SIZE()
 	ON_WM_SIZING()
 END_MESSAGE_MAP()
@@ -38,10 +37,12 @@ void CResizingDlg::OnSizing(UINT fwSide, LPRECT pRect)
 	ValidateWindowSizing(this, fwSide, pRect);
 }
 
-void CResizingDlg::OnDestroy()
+BOOL CResizingDlg::DestroyWindow()
 {
-	CDialog::OnDestroy();
 	m_rootPanel->OnDestroy();
+
+	BOOL ret = CDialog::DestroyWindow();
+	return ret;
 }
 
 } // end namespace df
