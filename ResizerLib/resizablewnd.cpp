@@ -80,9 +80,16 @@ void ResizeChildPanels(CPanel * parent, bool resizeVert, bool resizeHorz)
 			else
 			{
 				int origWidth = off.left + off.right + GetRectWidth(cr);
-				double ratio = (double)off.left / origWidth;
-				r.left = static_cast<int>(pr.left + (ratio * GetRectWidth(pr)));
+				int diff = GetRectWidth(pr) - origWidth;
+				CPanel::OFFSET o = off;
+				o.left += diff / 2;
+				o.right += diff / 2;
+				if(diff % 2 == 1)
+					o.left += (diff / std::abs(diff)) * 1;
+
+				r.left = pr.left + o.left;
 				r.right = r.left + GetRectWidth(cr);
+				p->SetOffset(o);
 			}
 		}
 		else
@@ -111,9 +118,16 @@ void ResizeChildPanels(CPanel * parent, bool resizeVert, bool resizeHorz)
 			else
 			{
 				int origHeight = off.top + off.bottom + GetRectHeight(cr);
-				double ratio = (double)off.top / origHeight;
-				r.top = static_cast<int>(pr.top + (ratio * GetRectHeight(pr)));
+				int diff = GetRectHeight(pr) - origHeight;
+				CPanel::OFFSET o = off;
+				o.top += diff / 2;
+				o.bottom += diff / 2;
+				if(diff % 2 == 1)
+					o.top += (diff / std::abs(diff)) * 1;
+
+				r.top = pr.top + o.top;
 				r.bottom = r.top + GetRectHeight(cr);
+				p->SetOffset(o);
 			}
 		}
 		else
