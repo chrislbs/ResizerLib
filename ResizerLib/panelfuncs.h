@@ -28,6 +28,22 @@ _CreateWndPanels(InputIterator begin, InputIterator end, OutputIterator out, UIN
 	}
 }
 
+template<typename InputIterator, typename OutputIterator>
+typename std::enable_if<
+	std::is_convertible<CWnd *, typename std::iterator_traits<InputIterator>::value_type>::value &&
+	std::is_base_of<std::input_iterator_tag, typename std::iterator_traits<InputIterator>::iterator_category>::value &&
+	std::is_base_of<std::output_iterator_tag, typename std::iterator_traits<OutputIterator>::iterator_category>::value
+>::type
+_CreateWndPanels(InputIterator begin, InputIterator end, OutputIterator out, UINT anchor)
+{
+	while(begin != end)
+	{
+		*out = new CWndPanel((*begin)->GetSafeHwnd(), anchor);
+		++out;
+		++begin;
+	}
+}
+
 template<typename InputIterator>
 void SetPanelsParent(CPanel * parent, InputIterator begin, InputIterator end)
 {
