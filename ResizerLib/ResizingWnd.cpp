@@ -15,6 +15,11 @@ CResizingWnd::CResizingWnd()
 {
 }
 
+CResizingWnd::~CResizingWnd()
+{
+	DestroyResizeWindow(this);
+}
+
 BOOL CResizingWnd::RegisterWindowClass()
 {
 	WNDCLASS wndcls;
@@ -48,13 +53,6 @@ void CResizingWnd::PreSubclassWindow()
 	CWnd::PreSubclassWindow();
 	
 	m_rootPanel = new CRootWndPanel(GetSafeHwnd());
-}
-
-BOOL CResizingWnd::DestroyWindow()
-{
-	DestroyResizeWindow(this);
-	BOOL ret = CWnd::DestroyWindow();
-	return ret;
 }
 
 BEGIN_MESSAGE_MAP(CResizingWnd, CWnd)

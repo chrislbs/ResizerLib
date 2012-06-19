@@ -13,12 +13,12 @@ class CResizingDlg : public CDialog, public IResizableWnd
 
 public:
 	CResizingDlg(UINT IDD, CWnd * pParent = NULL);
+	~CResizingDlg();
 
 	inline virtual CRootWndPanel * GetRootPanel() { return m_rootPanel; }
 
 public:
 	virtual void PreSubclassWindow();
-	virtual BOOL DestroyWindow();
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnSizing(UINT fwSide, LPRECT pRect);
 

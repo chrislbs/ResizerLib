@@ -18,12 +18,12 @@ public:
 	static BOOL RegisterWindowClass();
 
 	CResizingWnd();
+	virtual ~CResizingWnd();
 
 	inline virtual CRootWndPanel * GetRootPanel() { return m_rootPanel; }
 
 	// CWnd Overrides
 	virtual void PreSubclassWindow();
-	virtual BOOL DestroyWindow();
 
 	// MFC Messages
 	afx_msg void OnSize(UINT nType, int cx, int cy);

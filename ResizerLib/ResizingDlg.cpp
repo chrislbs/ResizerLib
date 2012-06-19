@@ -11,6 +11,11 @@ CResizingDlg::CResizingDlg(UINT IDD, CWnd * pParent)
 {
 }
 
+CResizingDlg::~CResizingDlg()
+{
+	DestroyResizeWindow(this);
+}
+
 void CResizingDlg::PreSubclassWindow()
 {
 	CDialog::PreSubclassWindow();	
@@ -35,14 +40,6 @@ void CResizingDlg::OnSizing(UINT fwSide, LPRECT pRect)
 {
 	CDialog::OnSizing(fwSide, pRect);
 	ValidateWindowSizing(this, fwSide, pRect);
-}
-
-BOOL CResizingDlg::DestroyWindow()
-{
-	DestroyResizeWindow(this);
-
-	BOOL ret = CDialog::DestroyWindow();
-	return ret;
 }
 
 } // end namespace df
