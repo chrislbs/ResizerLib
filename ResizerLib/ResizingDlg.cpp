@@ -39,7 +39,7 @@ void CResizingDlg::OnSizing(UINT fwSide, LPRECT pRect)
 
 BOOL CResizingDlg::DestroyWindow()
 {
-	m_rootPanel->OnDestroy();
+	DestroyResizeWindow(this);
 
 	BOOL ret = CDialog::DestroyWindow();
 	return ret;

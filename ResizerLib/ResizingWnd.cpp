@@ -52,7 +52,7 @@ void CResizingWnd::PreSubclassWindow()
 
 BOOL CResizingWnd::DestroyWindow()
 {
-	m_rootPanel->OnDestroy();
+	DestroyResizeWindow(this);
 	BOOL ret = CWnd::DestroyWindow();
 	return ret;
 }
