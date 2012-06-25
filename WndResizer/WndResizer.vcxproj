@@ -68,16 +68,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Source\projects\cpp\WndResizer\ResizerLib;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Source\projects\cpp\WndResizer\$(Configuration)MFC\;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\ResizerLib;$(IncludePath)</IncludePath>
+    <LibraryPath>..\$(Configuration)MFC;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMFC|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\Source\projects\cpp\WndResizer\ResizerLib;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Source\projects\cpp\WndResizer\$(Configuration)MFC\;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\ResizerLib;$(IncludePath)</IncludePath>
+    <LibraryPath>..\$(Configuration)MFC;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMFC|Win32'">
     <LinkIncremental>false</LinkIncremental>
