@@ -3,10 +3,10 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>..\WndResizer\ResizerLib;$(IncludePath)</IncludePath>
+    <IncludePath>..\ResizerLib\ResizerLib\ResizerLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup>
-    <LibraryPath>..\WndResizer\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\ResizerLib\WndResizer\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
