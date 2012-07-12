@@ -11,27 +11,17 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
-		DebugMFC|Win32 = DebugMFC|Win32
 		Release|Win32 = Release|Win32
-		ReleaseMFC|Win32 = ReleaseMFC|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.Debug|Win32.ActiveCfg = Debug|Win32
 		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.Debug|Win32.Build.0 = Debug|Win32
-		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.DebugMFC|Win32.ActiveCfg = Debug|Win32
-		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.DebugMFC|Win32.Build.0 = Debug|Win32
 		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.Release|Win32.ActiveCfg = Release|Win32
 		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.Release|Win32.Build.0 = Release|Win32
-		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.ReleaseMFC|Win32.ActiveCfg = Release|Win32
-		{CD49D74C-4AC9-4F34-890C-6E36562EC56A}.ReleaseMFC|Win32.Build.0 = Release|Win32
 		{A5335896-9A53-4705-9CD6-8593097CEB09}.Debug|Win32.ActiveCfg = Debug|Win32
 		{A5335896-9A53-4705-9CD6-8593097CEB09}.Debug|Win32.Build.0 = Debug|Win32
-		{A5335896-9A53-4705-9CD6-8593097CEB09}.DebugMFC|Win32.ActiveCfg = DebugMFC|Win32
-		{A5335896-9A53-4705-9CD6-8593097CEB09}.DebugMFC|Win32.Build.0 = DebugMFC|Win32
 		{A5335896-9A53-4705-9CD6-8593097CEB09}.Release|Win32.ActiveCfg = Release|Win32
 		{A5335896-9A53-4705-9CD6-8593097CEB09}.Release|Win32.Build.0 = Release|Win32
-		{A5335896-9A53-4705-9CD6-8593097CEB09}.ReleaseMFC|Win32.ActiveCfg = ReleaseMFC|Win32
-		{A5335896-9A53-4705-9CD6-8593097CEB09}.ReleaseMFC|Win32.Build.0 = ReleaseMFC|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,7 +6,7 @@
     <IncludePath>..\ResizerLib\ResizerLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup>
-    <LibraryPath>..\ResizerLib\$(Configuration)MFC\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\ResizerLib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
