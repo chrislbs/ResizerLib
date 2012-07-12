@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WndResizer", "WndResizer\WndResizer.vcxproj", "{CD49D74C-4AC9-4F34-890C-6E36562EC56A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A5335896-9A53-4705-9CD6-8593097CEB09} = {A5335896-9A53-4705-9CD6-8593097CEB09}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ResizerLib", "ResizerLib\ResizerLib.vcxproj", "{A5335896-9A53-4705-9CD6-8593097CEB09}"
 EndProject
