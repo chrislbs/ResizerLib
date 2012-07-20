@@ -159,7 +159,7 @@ void ResizeWndPanels(IResizableWnd * rwnd)
 	{
 		CPanel * panel = panels.top();
 		std::set<CPanel *>::const_iterator search = wndPanels.find(panel);
-		if(panel != root && search != wndPanels.end())
+		if(search != wndPanels.end())
 			rzpanels.push_back(reinterpret_cast<CWndPanel*>(*search));
 
 		panels.pop();

@@ -4,7 +4,7 @@
 namespace df {
 
 CRootWndPanel::CRootWndPanel(HWND hWnd, SIZE szMin)
-	:CWndPanel(hWnd)
+	:CPanel(), m_hwnd(hWnd)
 {
 	memcpy_s(&m_szMin, sizeof(SIZE), &szMin, sizeof(SIZE));
 
