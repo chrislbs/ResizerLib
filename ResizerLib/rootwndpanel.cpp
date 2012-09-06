@@ -3,7 +3,7 @@
 
 namespace df {
 
-CRootWndPanel::CRootWndPanel(HWND hWnd, SIZE szMin)
+CRootWndPanel::CRootWndPanel(HWND hWnd, const SIZE& szMin)
 	:CPanel(), m_hwnd(hWnd)
 {
 	memcpy_s(&m_szMin, sizeof(SIZE), &szMin, sizeof(SIZE));

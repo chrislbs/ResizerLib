@@ -13,7 +13,7 @@ class CRootWndPanel : public CPanel
 	HWND m_hwnd;
 
 public:
-	CRootWndPanel(HWND hWnd, SIZE szMin = EMPTY_SIZE);
+	CRootWndPanel(HWND hWnd, const SIZE& szMin = EMPTY_SIZE);
 private:
 	CRootWndPanel();
 	CRootWndPanel(const CRootWndPanel& rhs);
